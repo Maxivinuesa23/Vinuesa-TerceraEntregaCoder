@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
     {% block contenido %}
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="d-flex justify-content-center align-items-center">
         <div class="card shadow-lg p-4" style="width: 30rem;">
-            <h2 class="text-center mb-4">Crear Alumno</h2>
-            <form action="{% url 'crear_alumno' %}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <h2 class="text-center mb-4">Modificar Alumno</h2>
+            <form action="{% url 'modificar_alumno' alumno.id %}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                 {% csrf_token %}
-                {{ form.as_p }}
-                <div class="d-grid">
+                
+                <div class="mb-3">
                     <label for="id_nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                    <input type="text" class="form-control" id="id_nombre" name="nombre" value="{{ alumno.nombre }}" required>
                     <div class="invalid-feedback">
                         Por favor ingrese un nombre válido.
                     </div>
@@ -16,7 +16,7 @@
 
                 <div class="mb-3">
                     <label for="id_apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="id_apellido" name="apellido" required>
+                    <input type="text" class="form-control" id="id_apellido" name="apellido" value="{{ alumno.apellido }}" required>
                     <div class="invalid-feedback">
                         Por favor ingrese un apellido válido.
                     </div>
@@ -24,7 +24,7 @@
 
                 <div class="mb-3">
                     <label for="id_dni" class="form-label">DNI</label>
-                    <input type="text" class="form-control" id="id_dni" name="dni" required>
+                    <input type="text" class="form-control" id="id_dni" name="dni" value="{{ alumno.dni }}" required>
                     <div class="invalid-feedback">
                         Por favor ingrese un DNI válido.
                     </div>
@@ -32,7 +32,7 @@
 
                 <div class="mb-3">
                     <label for="id_carrera" class="form-label">Carrera</label>
-                    <input type="text" class="form-control" id="id_carrera" name="carrera" required>
+                    <input type="text" class="form-control" id="id_carrera" name="carrera" value="{{ alumno.carrera }}" required>
                     <div class="invalid-feedback">
                         Por favor ingrese una carrera válida.
                     </div>
@@ -40,7 +40,7 @@
 
                 <div class="mb-3">
                     <label for="id_fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento" required>
+                    <input type="date" class="form-control" id="id_fecha_nacimiento" name="fecha_nacimiento" value="{{ alumno.fecha_nacimiento|date:'Y-m-d' }}" required>
                     <div class="invalid-feedback">
                         Por favor ingrese una fecha de nacimiento válida.
                     </div>
@@ -48,17 +48,23 @@
 
                 <div class="mb-3">
                     <label for="id_avatar" class="form-label">Avatar</label>
-                    <input type="file" class="form-control" id="id_avatar" name="avatar" accept="image/*" required>
+                    <input type="file" class="form-control" id="id_avatar" name="avatar" accept="image/*">
+                    {% if alumno.avatar %}
+                        <div class="mt-2">
+                            <p>Avatar actual:</p>
+                            <img src="{{ alumno.avatar.url }}" alt="Avatar actual" class="img-thumbnail" style="max-width: 150px;">
+                        </div>
+                    {% endif %}
                     <div class="invalid-feedback">
                         Por favor seleccione una imagen válida como avatar.
                     </div>
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Cargar Alumno</button>
+                    <button type="submit" class="btn btn-primary">Modificar Alumno</button>
                 </div>
             </form>
         </div>
     </div>
-    {% endblock contenido %}
+{% endblock contenido %}
     

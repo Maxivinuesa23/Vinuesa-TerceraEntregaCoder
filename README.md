@@ -1,5 +1,5 @@
 # Vinuesa-TerceraEntregaCoder
-Se realiza la tercera entrega para el curso de Python en CoderHouse
+Se realiza la entrega final para el curso de Python en CoderHouse
 
 En el proyecto se utiliza Django para la creación de una pagina, en este caso, la creación de un sistema el cual almacena datos de alumnos.
 

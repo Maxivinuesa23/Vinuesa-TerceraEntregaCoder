@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+    {% block contenido %}
+    <div class="container mt-4">
+        <div class="card border-primary shadow-sm">
+            <div class="card-body bg-light">
+                <div class="d-flex align-items-center mb-4">
+                    {% if alumno.avatar %}
+                        <img src="{{ alumno.avatar.url }}" alt="Avatar" class="rounded-circle me-3" height="100px" width="100px" style="object-fit: cover;">
+                    {% else %}
+                        <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center me-3" style="height: 100px; width: 100px;">
+                            <span class="fs-4">N/A</span>
+                        </div>
+                    {% endif %}
+                    <h5 class="card-title text-primary mb-0">{{ alumno.nombre }} {{ alumno.apellido }}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>DNI:</strong> {{ alumno.dni }}</p>
+                        <p class="card-text"><strong>Carrera:</strong> {{ alumno.carrera }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Fecha de Nacimiento:</strong> {{ alumno.fecha_nacimiento }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock contenido %}
+    
