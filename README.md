@@ -21,11 +21,9 @@ Como inicializar el proyecto.
 5. activamos el entorno virtual 
 
 ### Windows
-### Windows
 source .venv/Scripts/activate
 . .venv/Scripts/activate
 
-### Linux/Mac
 ### Linux/Mac
 source .venv/bin/activate
 . .venv/bin/activate
