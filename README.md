@@ -3,6 +3,8 @@ Se realiza la entrega final para el curso de Python en CoderHouse
 
 En el proyecto se utiliza Django para la creación de una pagina, en este caso, la creación de un sistema el cual almacena datos de alumnos.
 
+Si queres ver el funcionamiento del proyecto sin instalarlo localmente podes ver este video en Youtube:
+            `https://www.youtube.com/watch?v=ftEM2Yc2xno`
 [!TIP]
 Como inicializar el proyecto.
 
@@ -12,21 +14,21 @@ Como inicializar el proyecto.
 
 2. entramos en la carpeta y la abrimos con vscode
 
-3. clonamos el repositorio en la carpeta git clone (url repositorio)
+3. clonamos el repositorio en la carpeta `git clone (url repositorio)`
 
-4. creamos el entorno virtual python -m venv <nombre_de_la_carpeta_que_contiene_el_entorno_virtual> (*)
+4. creamos el entorno virtual `python -m venv <nombre_de_la_carpeta_que_contiene_el_entorno_virtual>` 
 
-5. activamos el entorno virtual (*)
+5. activamos el entorno virtual 
 
-# Windows
+### Windows
 source .venv/Scripts/activate
 . .venv/Scripts/activate
 
-# Linux/Mac
+### Linux/Mac
 source .venv/bin/activate
 . .venv/bin/activate
 
-6. crear la base de datos con python manage.py makemigrations y luego python manage.py migrate
+6. crear la base de datos con python `manage.py makemigrations` y luego `python manage.py migrate`
 
 7. si desea crear un usuario puede hacerlo con python `manage.py createsuperuser`
 
