@@ -3,23 +3,38 @@ Se realiza la entrega final para el curso de Python en CoderHouse
 
 En el proyecto se utiliza Django para la creación de una pagina, en este caso, la creación de un sistema el cual almacena datos de alumnos.
 
-El mismo cuenta con tres archivos HTML donde contamos con:
+[!TIP]
+Como inicializar el proyecto.
 
-1. inicio.html: En el mismo veremos la primer página que nos comenta como utilizar el sistema.
+# INICIALIZAR PROYECTO
 
-2. crear_alumno.html: En el mismo tenemos la segunda página la cual contiene un formulario creado de forma que sea intuitiva con la ayuda de Bootstrap.
+1. creamos una carpeta donde vamos a meter el proyecto
 
-3. mostrar_alumno.html: Por ultimo podemos ver la tercer página la cual muestra todos los alumnos cargados previamente. En caso de no tener alumnos cargados la misma página se encarga de mostrar un mensaje especificando este.
+2. entramos en la carpeta y la abrimos con vscode
+
+3. clonamos el repositorio en la carpeta git clone (url repositorio)
+
+4. creamos el entorno virtual python -m venv <nombre_de_la_carpeta_que_contiene_el_entorno_virtual> (*)
+
+5. activamos el entorno virtual (*)
+
+# Windows
+source .venv/Scripts/activate
+. .venv/Scripts/activate
+
+# Linux/Mac
+source .venv/bin/activate
+. .venv/bin/activate
+
+6. crear la base de datos con python manage.py makemigrations y luego python manage.py migrate
+
+7. si desea crear un usuario puede hacerlo con python `manage.py createsuperuser`
+
+8. Inicializar el proyecto (LocalHost) `python manage.py runserver`
 
 ## MODO DE USO
 
-1. Al ejecutar el programa por primera vez, nos encontraremos dentro de la sección "Inicio". Es importante situarnos en la barra de navegación superior la cual cuenta con 3 opciones comentadas anteriormente.
-
-2. Una vez situados en la barra de navegación debemos ir al apartado que dice "Crear Alumno".
-
-3. Dentro del apartado "Crear Alumno" debemos rellenar los campos (nombre, apellido, dni, carrera). Una vez rellenado los campos debemos cargar al alumno haciendo click en el botón "Cargar Alumno".
-
-4. Una vez cargado el alumno la misma aplicación nos llevara al apartado "Mostrar Alumno" con el o los datos cargados.
+Para poder utilizar correctamente el proyecto es importante iniciar sesión con el superusuario o crear uno mismo. Si no realizamos el logueo no podremos utilizar las distintas funciones del proyecto ya que esta limitado para usuarios logueados.
 
 ## INFORMACIÓN DEL PROYECTO
 $TEMPLATES/HOME$: El mismo se encuentra construido con Django, por lo tanto respeta el patrón MVT
